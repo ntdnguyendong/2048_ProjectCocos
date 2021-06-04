@@ -152,6 +152,7 @@ cc.Class({
     },
 
     touchEvent(direction) {
+        this._isChange = false;
         switch (direction) {
             case DIRECTION.RIGHT: 
             case DIRECTION.LEFT:
@@ -166,6 +167,7 @@ cc.Class({
     },
  
     mouseEvent(direction) {
+        this._isChange = false;
         switch (direction) {
             case DIRECTION.RIGHT: 
             case DIRECTION.LEFT:
@@ -215,12 +217,7 @@ cc.Class({
         if(newArr.length > 0) {
             let randomXY = newArr[Math.random() * newArr.length >> 0];
             let number = Math.floor(Math.random() * 4);
-            if(number < 3) {
-                ARR_BLOCK[randomXY.x][randomXY.y] = 2;
-            }
-            else {
-                ARR_BLOCK[randomXY.x][randomXY.y] = 4;
-            } 
+            number < 3 ? ARR_BLOCK[randomXY.x][randomXY.y] = 2 : ARR_BLOCK[randomXY.x][randomXY.y] = 4;
         }
         this.initBlock();
     },
@@ -252,8 +249,6 @@ cc.Class({
             for(let col =0; col < GAME_CONFIG.COL; col++) {
                 if(ARR_BLOCK[row][col] === 2048) {
                     this.winGame.active = true;
-                    this.checkScore();
-                    return;
                 }
             }
         }
