@@ -424,11 +424,6 @@
     "meta": 1622791210142,
     "relativePath": "image"
   },
-  "b29c01d9-5fb7-4030-b627-32304e09fe25": {
-    "asset": 1622791210141,
-    "meta": 1622791319689,
-    "relativePath": "GamePlay.fire"
-  },
   "554b2dec-a181-46f1-9267-98e94c41a02c": {
     "asset": 1622791210143,
     "meta": 1622791319751,
@@ -449,11 +444,6 @@
     "meta": 1622791319766,
     "relativePath": "Prefabs/Block.prefab"
   },
-  "46e0df85-9f85-4035-9c23-f9fdd3160f6e": {
-    "asset": 1622791210141,
-    "meta": 1622791319768,
-    "relativePath": "Prefabs/Hover Score.prefab"
-  },
   "efc3fec6-35f8-4411-8f85-6734d1f2595a": {
     "asset": 1622791210142,
     "meta": 1622791210141,
@@ -469,9 +459,19 @@
     "meta": 1622791320103,
     "relativePath": "Scripts/BlockController.js"
   },
+  "b29c01d9-5fb7-4030-b627-32304e09fe25": {
+    "asset": 1622791884169,
+    "meta": 1622791994756,
+    "relativePath": "GamePlay.fire"
+  },
+  "46e0df85-9f85-4035-9c23-f9fdd3160f6e": {
+    "asset": 1622791884169,
+    "meta": 1622791995190,
+    "relativePath": "Prefabs/Hover Score.prefab"
+  },
   "016ac3d7-e207-4c63-b500-1a412c061854": {
-    "asset": 1622791475812,
-    "meta": 1622791478276,
+    "asset": 1622791992905,
+    "meta": 1622791995273,
     "relativePath": "Scripts/GameManagaer.js"
   }
 }

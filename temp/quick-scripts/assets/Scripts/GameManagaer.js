@@ -180,6 +180,7 @@ cc.Class({
         return newArray;
     },
     slideRightOrDown: function slideRightOrDown(array) {
+
         var newArray = [];
         for (var row = 0; row < GAME_CONFIG.ROW; row++) {
             if (array[row] == 0) newArray.push(array[row]);
@@ -235,6 +236,7 @@ cc.Class({
             for (var col = 0; col < GAME_CONFIG.COL; col++) {
                 if (ARR_BLOCK[row][col] === 2048) {
                     this.winGame.active = true;
+                    this.checkScore();
                     return;
                 }
             }
@@ -244,7 +246,6 @@ cc.Class({
         var temp = this._score - this._tempScore;
         this.score.string = this._score;
         this.hoverScore(temp);
-        this.checkScore();
     },
     hoverScore: function hoverScore(num) {
         if (num !== 0) {
