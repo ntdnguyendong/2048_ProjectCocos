@@ -265,7 +265,7 @@ cc.Class({
     },
     
     hoverScore(num) {
-        if (num !== 0) {
+        if (num > 0) {
             let hoverScore = cc.instantiate(this.hoverScorePrefab);
             hoverScore.parent = this.score.node;
             hoverScore.getComponent(cc.Label).string = "+ " + num;
