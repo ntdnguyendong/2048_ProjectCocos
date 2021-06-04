@@ -270,7 +270,7 @@ cc.Class({
             hoverScore.parent = this.score.node;
             hoverScore.getComponent(cc.Label).string = "+ " + num;
             cc.tween(hoverScore)
-                .to(1, { position: cc.v2(50, 50) })
+                .to(0.5, { position: cc.v2(50, 50) })
                 .call(() => {
                     hoverScore.destroy()
                 })
