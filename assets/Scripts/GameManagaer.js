@@ -254,7 +254,6 @@ cc.Class({
             for(let col =0; col < GAME_CONFIG.COL; col++) {
                 if(ARR_BLOCK[row][col] === 2048) {
                     this.winGame.active = true;
-                    this.checkScore();
                     return;
                 }
             }
@@ -264,7 +263,6 @@ cc.Class({
     updateScore() {
         let temp = this._score - this._tempScore;
         this.score.string = this._score;
-        cc.log(temp)
         this.hoverScore(temp)
         this.checkScore();
     },

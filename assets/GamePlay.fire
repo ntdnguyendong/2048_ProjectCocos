@@ -2361,7 +2361,9 @@
     "loseGame": {
       "__id__": 32
     },
-    "hoverScorePrefab": null,
+    "hoverScorePrefab": {
+      "__uuid__": "46e0df85-9f85-4035-9c23-f9fdd3160f6e"
+    },
     "_isChange": false,
     "_restart": false,
     "_score": 0,
