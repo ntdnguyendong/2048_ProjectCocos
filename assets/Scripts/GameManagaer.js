@@ -46,7 +46,6 @@ cc.Class({
         this.winGame.active = false;
         this.addNum();
         this.addNum();
-        this._restart = false;
     },
 
     initBlock() {
@@ -119,6 +118,7 @@ cc.Class({
     },
 
     reflectTouch() {
+        if(this._restart) return this._restart = false;
         let pointsVec = this._endPoint.sub(this._startPoint);
         let vecLength = pointsVec.mag();
         if (vecLength > MIN_LENGTH) {
@@ -133,6 +133,7 @@ cc.Class({
     },
 
     reflectCLick() {
+        if(this._restart) return this._restart = false;
         let pointsVec = this._endPoint.sub(this._startPoint);
         let vecLength = pointsVec.mag();
         if (vecLength > MIN_LENGTH) {
@@ -147,8 +148,6 @@ cc.Class({
     },
 
     touchEvent(direction) {
-        if(this._restart) return;
-        this._restart = false;
         switch (direction) {
             case DIRECTION.RIGHT: 
             case DIRECTION.LEFT:
@@ -163,8 +162,6 @@ cc.Class({
     },
  
     mouseEvent(direction) {
-        if(this._restart) return;
-        this._restart = false;
         switch (direction) {
             case DIRECTION.RIGHT: 
             case DIRECTION.LEFT:
