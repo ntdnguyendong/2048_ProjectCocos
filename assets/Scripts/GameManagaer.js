@@ -73,7 +73,7 @@ cc.Class({
         };
     },
 
-    onKeyDown(event) {
+    onKeyUp(event) {
         if(this._isCLick){
             this._isChange = false;
             switch(event.keyCode) {
@@ -89,7 +89,7 @@ cc.Class({
     },
 
     eventHandler() {
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
         if (cc.sys.isMobile) {
             this.mainGame.on("touchstart", (event) => {
                 this._startPoint = event.getLocation();
