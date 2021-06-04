@@ -38,6 +38,7 @@ cc.Class({
     },
 
     onLoad() {
+        // cc.sys.localStorage.removeItem('bestScore')
         this.initObj();
         this.eventHandler();
         this.getScoreStorge();
@@ -262,6 +263,7 @@ cc.Class({
         let temp = this._score - this._tempScore;
         this.score.string = this._score;
         this.hoverScore(temp)
+        this.checkScore();
     },
     
     hoverScore(num) {
