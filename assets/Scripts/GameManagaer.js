@@ -29,9 +29,12 @@ cc.Class({
         record: cc.Label,
         winGame: cc.Node,
         loseGame: cc.Node,
+        hoverScorePrefab: cc.Prefab,
+
         _isChange: false,
         _restart: false,
-        _score: 0
+        _score: 0,
+        _tempScore : 0,
     },
 
     onLoad() {
@@ -190,6 +193,7 @@ cc.Class({
     },
 
     slideRightOrDown(array) {
+        
         let newArray = [];
         for(let row = 0; row < GAME_CONFIG.ROW; row++) {
             if(array[row] == 0) newArray.push(array[row]);
@@ -257,8 +261,26 @@ cc.Class({
         }
     },
 
-    updateScore(value) {
+    updateScore() {
+        let temp = this._score - this._tempScore;
         this.score.string = this._score;
+        cc.log(temp)
+        this.hoverScore(temp)
+        this.checkScore();
+    },
+    
+    hoverScore(num) {
+        if (num !== 0) {
+            let hoverScore = cc.instantiate(this.hoverScorePrefab);
+            hoverScore.parent = this.score.node;
+            hoverScore.getComponent(cc.Label).string = "+ " + num;
+            cc.tween(hoverScore)
+                .to(1, { position: cc.v2(50, 50) })
+                .call(() => {
+                    hoverScore.destroy()
+                })
+                .start()
+        }
     },
 
     clickRestart() {
@@ -270,6 +292,7 @@ cc.Class({
     },
 
     checkLeftRight(value) {
+        this._tempScore = this._score;
         for(let row = 0; row < GAME_CONFIG.ROW; row++) {
             let arr = ARR_BLOCK[row];
             if(value === 37 || value === 1) {
@@ -302,6 +325,7 @@ cc.Class({
     },
     
     checkUpDown(value) {
+        this._tempScore = this._score;
         for(let row = 0; row < GAME_CONFIG.ROW; row++) {
             let newArr = [];
             for(let col = 0; col < GAME_CONFIG.COL; col++) {
