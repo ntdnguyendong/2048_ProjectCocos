@@ -90,7 +90,7 @@ cc.Class({
 
     eventHandler() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
-        if (cc.sys.IPAD || cc.sys.isMobile) {
+        if (cc.sys.isMobile) {
             this.mainGame.on("touchstart", (event) => {
                 this._startPoint = event.getLocation();
             })
@@ -103,7 +103,7 @@ cc.Class({
                 this.reflectTouch();
             })
         }
-        if (cc.sys.DESKTOP_BROWSER) {
+        if (cc.sys.IPAD || cc.sys.DESKTOP_BROWSER) {
             this.mainGame.on("mousedown", (event) => {
                 this._isCLick = false;
                 this._startPoint = event.getLocation();
